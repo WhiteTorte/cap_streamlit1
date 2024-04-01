@@ -1,12 +1,8 @@
-import os
-import secrets
 import streamlit as st
 from langchain_openai import ChatOpenAI
 
-
-
 # OpenAI API 키 가져오기
-openai_api_key = secrets.secrets["OPENAI_API_KEY"]
+openai_api_key = st.secrets["OPENAI_API_KEY"]
 
 # OpenAI API 키가 없는 경우 에러 메시지 표시 후 종료
 if not openai_api_key:
