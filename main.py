@@ -19,7 +19,7 @@ st.text ('팀원 : 구봉서 김정후 김경환 김찬호')
 
 # 대화 상대의 말투 입력
 partner_tone = st.text_area('대화 상대의 말투를 나타내는 문장')
-st.text ('<br> ex) 착하게 말해주세요')
+st.text ('ex) 착하게 말해주세요')
 
 # 사용자로부터 대화 시작 문장 입력 받기
 user_input = st.text_input('대화 시작')
