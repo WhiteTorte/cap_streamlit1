@@ -6,14 +6,16 @@ openai_api_key = st.secrets["OPENAI_API_KEY"]
 
 # OpenAI API 키가 없는 경우 에러 메시지 표시 후 종료
 if not openai_api_key:
-    st.error("OpenAI API 키가 설정되지 않았습니다. .env 파일에 설정해주세요.")
+    st.error("OpenAI API 키가 설정되지 않았습니다.")
     st.stop()
 
 # ChatOpenAI 클래스의 인스턴스 생성
 chat_model = ChatOpenAI(api_key=openai_api_key)
 
 # 스트림릿 앱 제목 설정
-st.title('인공지능 대화 시스템')
+st.title('인공지능 대화 시스템 "무량공조" ')
+st.text ('팀장 : 김동인')
+st.text ('팀원 : 구봉서 김정후 김경환 김찬호')
 
 # 대화 상대의 말투 입력
 partner_tone = st.text_area('대화 상대의 말투를 나타내는 문장')
