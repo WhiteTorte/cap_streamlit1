@@ -1,13 +1,12 @@
 import os
-from dotenv import load_dotenv
+import secrets
 import streamlit as st
 from langchain_openai import ChatOpenAI
 
-# .env 파일에서 환경 변수 로드
-load_dotenv()
+
 
 # OpenAI API 키 가져오기
-openai_api_key = os.getenv("OPENAI_API_KEY")
+openai_api_key = secrets.secrets["OPENAI_API_KEY"]
 
 # OpenAI API 키가 없는 경우 에러 메시지 표시 후 종료
 if not openai_api_key:
@@ -35,6 +34,6 @@ if st.button('대화 생성'):
     with st.spinner('대화 생성 중...'):
         try:
             response = chat_model.invoke(input_with_tone)
-            st.write('대화 상대의 응답 : ', response.content)
+            st.write('대화 상대의 응답:', response.content)
         except Exception as e:
-            st.error(f"대화 생성 중 오류가 발생했습니다 : {str(e)}")
+            st.error(f"대화 생성 중 오류가 발생했습니다: {str(e)}")
